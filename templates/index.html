@@ -7,19 +7,57 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h1>Chat con Gemini</h1>
-            <p>Tu asistente de IA personal</p>
+    <div class="app-container">
+        <!-- Sidebar para historial -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Historial de Chats</h2>
+                <button id="new-chat-btn" class="new-chat-btn">+ Nuevo Chat</button>
+            </div>
+            <div class="sessions-list" id="sessions-list">
+                <!-- Las sesiones se cargarán aquí -->
+            </div>
+            <button id="toggle-sidebar" class="toggle-sidebar">☰</button>
         </div>
-        <div class="chat-box" id="chat-box">
-            <!-- Los mensajes del chat se añadirán aquí -->
-        </div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
-            <button id="send-btn">Enviar</button>
+
+        <!-- Contenedor principal del chat -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <button id="menu-btn" class="menu-btn">☰</button>
+                <div class="header-content">
+                    <h1>Chat con Gemini</h1>
+                    <p>Tu asistente de IA personal</p>
+                </div>
+                <div class="session-controls">
+                    <button id="rename-session-btn" class="control-btn" title="Renombrar sesión">✏️</button>
+                    <button id="delete-session-btn" class="control-btn" title="Eliminar sesión">🗑️</button>
+                </div>
+            </div>
+            <div class="chat-box" id="chat-box">
+                <div class="welcome-message">
+                    <h3>¡Bienvenido al Chat con Gemini!</h3>
+                    <p>Inicia una conversación o selecciona un chat anterior del historial.</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+                <button id="send-btn">Enviar</button>
+            </div>
         </div>
     </div>
+
+    <!-- Modal para renombrar sesión -->
+    <div id="rename-modal" class="modal">
+        <div class="modal-content">
+            <h3>Renombrar Sesión</h3>
+            <input type="text" id="session-title-input" placeholder="Nuevo título...">
+            <div class="modal-buttons">
+                <button id="save-title-btn">Guardar</button>
+                <button id="cancel-rename-btn">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="/static/script.js"></script>
 </body>
 </html>

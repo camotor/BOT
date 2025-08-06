@@ -4,3 +4,7 @@
 # Python cache
 __pycache__/
 *.pyc
+
+# Database files
+chat_history.db
+*.db
